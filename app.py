@@ -39,10 +39,14 @@ def callback():
 def handle_message(event):
     msg=event.message.text  #使用者輸入訊息
     r="很抱歉，您說了什麼？？"
-    if msg=="hi":
+    if msg in ["hi","Hi","哈囉","你好","你好呀"]:
         r="哈囉"
     elif msg=="你吃飯了嗎":
         r="我還沒吃誒"
+    elif msg=="你是誰":
+        r="我是shen的line聊天機器人"
+    elif "訂位" in msg:
+        r="請問您是要訂位嗎？？"
 
     line_bot_api.reply_message(
         event.reply_token,
