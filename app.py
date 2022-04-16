@@ -37,11 +37,16 @@ def callback():
 #處理接收到的訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg=event.message.text
-    s="你吃飯了嗎"
+    msg=event.message.text  #使用者輸入訊息
+    r="很抱歉，您說了什麼？？"
+    if msg=="hi":
+        r="哈囉"
+    elif msg=="你吃飯了嗎":
+        r="我還沒吃誒"
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=s))
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
