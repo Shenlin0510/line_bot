@@ -39,7 +39,7 @@ def callback():
 def handle_message(event):
     msg=event.message.text  #使用者輸入訊息
     r="很抱歉，您說了什麼？？"
-    if ["定位","位置","location"] in msg:
+    if  msg in  ["定位","位置","location"]:
         location_message = LocationSendMessage(
         title='my location',
         address='Tokyo',
